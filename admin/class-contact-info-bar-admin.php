@@ -147,4 +147,19 @@ class Contact_Info_Bar_Admin {
 		include_once( 'partials/contact-info-bar-admin-display.php' );
 	}
 
+
+	public function options_update() {
+	    register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
+	}
+
+	public function validate($input) {
+	    // All checkboxes inputs        
+	    $valid = array();
+
+	    //Cleanup
+	    $valid['active'] = (isset($input['active']) && !empty($input['active'])) ? 1 : 0;
+
+	    return $valid;
+	 }
+
 }
