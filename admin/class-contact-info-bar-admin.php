@@ -173,8 +173,3 @@ class Contact_Info_Bar_Admin {
 	 }
 
 }
-
-add_action('wp_head', 'Contact_Info_Bar');
-function Contact_Info_Bar() {
-	echo $valid['activated'];
-}
